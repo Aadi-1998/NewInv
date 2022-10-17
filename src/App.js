@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, {  Fragment } from 'react';
+import {PDFViewer} from '@react-pdf/renderer'
+import Invoice from './Components/Reports/Invoice'
+import invoice from './Data/Invoice'
+
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
+// class App extends Component {
+//   render() {
+//     return (
+//         <Fragment>
+//             <PDFViewer width="1000" height="600" className="app" >
+//                 <Invoice invoice={invoice}/>
+//             </PDFViewer>
+//         </Fragment>
+//     );
+//   }
+// }
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   <Fragment>
+    <PDFViewer width="1000" height="600" className="app" >
+      <Invoice invoice={invoice}/>
+    </PDFViewer>
+   </Fragment>
+  )
 }
 
 export default App;
+
